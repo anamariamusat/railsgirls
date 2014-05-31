@@ -1,0 +1,31 @@
+<h1>My super awesome ideas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Awesome library with awesome ideas</th>
+      <th>What is so awesome about it?</th>
+      <th>This is how it looks like. Yes...picture!</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.name %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.picture %></td>
+        <td><%= link_to 'Show', idea %></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Show us what you got. Insert your new idea here!', new_idea_path %>
